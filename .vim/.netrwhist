@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/dusts/.vim'
+let g:netrw_dirhist_5='/Users/dusts/Library/Application Support/abnerworks.Typora/themes'
+let g:netrw_dirhist_4='/Users/dusts/Library/Application Support'
+let g:netrw_dirhist_3='/Users/dusts/aston/Notes/Obsidian/aston/Projects/Fix-LLM'
+let g:netrw_dirhist_2='/Users/dusts/.config/nvim'
+let g:netrw_dirhist_1='/Users/dusts/aston/Notes/Obsidian/aston/Projects/Fix-LLM'
