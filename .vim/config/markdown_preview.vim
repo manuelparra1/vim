@@ -44,9 +44,23 @@ function! PreviewMarkdown() abort
     call add(g:md_preview_files, b:md_preview_path)
   endif
 
-  " 4. Run Pandoc
+" 4. Pre-process Markdown & Run Pandoc
+  " Grab the current buffer and convert ??> into an invisible #q anchor
+  let l:md_lines = getline(1, '$')
+  call map(l:md_lines, 'substitute(v:val, ''^??>\s*\(.*\)'', ''> [](#q) \1'', '''')')
+  
+  " Convert <think> and </think> into native HTML5 collapsible blocks
+  call map(l:md_lines, 'substitute(v:val, ''<think>'', ''<details class="think-block"><summary>Model Reasoning</summary>'', ''g'')')
+  call map(l:md_lines, 'substitute(v:val, ''</think>'', ''</details>'', ''g'')')
+
+  " Write the patched markdown to a temp file
+  let l:tmp_md = tempname() . '.md'
+  call writefile(l:md_lines, l:tmp_md)
+  call add(g:md_preview_files, l:tmp_md) " Ensures Vim deletes this on exit too
+
   let l:resource_path = expand('%:p:h')
-  let l:cmd = 'pandoc ' . shellescape(expand('%:p')) .
+  " NOTICE: We are now passing l:tmp_md to Pandoc instead of expand('%:p')
+  let l:cmd = 'pandoc ' . shellescape(l:tmp_md) .
         \ ' --standalone --embed-resources' .
         \ ' --mathjax' .
         \ ' --metadata title=""' .

@@ -10,6 +10,14 @@ let g:llm_providers.openrouter_mimo = {
       \ 'reasoning': {'effort': 'high'}
       \ }
 
+let g:llm_providers.openrouter_minimax = {
+      \ 'base_url': 'https://openrouter.ai/api/v1/chat/completions',
+      \ 'api_key_env': 'OPENROUTER_API_KEY',
+      \ 'model': 'minimax/minimax-m3',
+      \ 'temperature': 0.7,
+      \ 'reasoning': {'effort': 'high'}
+      \ }
+
 let g:llm_providers.openrouter_gpt_oss = {
       \ 'base_url': 'https://openrouter.ai/api/v1/chat/completions',
       \ 'api_key_env': 'OPENROUTER_API_KEY',

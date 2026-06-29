@@ -4,6 +4,8 @@
 "xnoremap <silent> <leader>no :<C-u>silent call LLMVisual('openrouter_mimo', 'study_concise')<CR>
 xnoremap <silent> <leader>no :<C-u>silent call LLMVisual('openrouter_mimo', 'chatbox')<CR>
 
+xnoremap <silent> <leader>nm :<C-u>silent call LLMVisual('openrouter_minimax', 'chatbox')<CR>
+
 " Simple rewrite
 xnoremap <silent> <leader>nr :<C-u>call LLMVisual('openrouter_mimo', 'rewrite_simple')<CR>
 
