@@ -27,3 +27,6 @@ set wildignorecase
 let g:netrw_banner = 0
 
 set clipboard=
+" Sync the system clipboard with Vim's unnamed register natively
+" set clipboard=unnamedplus
+

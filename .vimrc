@@ -1,7 +1,7 @@
 " ~/.vimrc
 
 source ~/.vim/config/leader.vim
-source ~/.vim/config/options.vim
+" source ~/.vim/config/options.vim
 source ~/.vim/config/clipboard.vim
 source ~/.vim/config/search-path.vim
 source ~/.vim/config/filetypes.vim
